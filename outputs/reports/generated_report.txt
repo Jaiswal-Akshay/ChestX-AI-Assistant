@@ -1,0 +1,11 @@
+FINDINGS
+Atelectasis is possibly present (probability 0.50). Cardiomegaly is likely present (probability 0.80). No strong model support for consolidation (probability 0.20). No strong model support for pleural effusion (probability 0.04). No strong model support for pneumonia (probability 0.39).
+
+IMPRESSION
+Likely findings: Cardiomegaly. Additional possible findings: Atelectasis.
+
+LIMITATIONS
+This is an AI decision-support output generated from CNN probabilities only. It is not a diagnosis and should not be used as a standalone clinical decision tool. Clinical correlation is recommended.
+
+PATIENT SUMMARY
+The AI system thinks the strongest finding is cardiomegaly. This is only a support result and should be reviewed by a clinician.

@@ -1,0 +1,14 @@
+{
+  "findings": {
+    "Atelectasis": 0.4973,
+    "Cardiomegaly": 0.7973,
+    "Consolidation": 0.2037,
+    "Pleural Effusion": 0.0358,
+    "Pneumonia": 0.3853
+  },
+  "top_findings": [
+    ["Cardiomegaly", 0.7973],
+    ["Atelectasis", 0.4973]
+  ],
+  "image_quality": "adequate"
+}

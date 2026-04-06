@@ -1,0 +1,90 @@
+
+Epoch 1
+Train Loss: 1.0465
+Val Loss: 1.0214
+Train Mean AUROC: 0.7044418816479228
+Val Mean AUROC: 0.7276044065949311
+Train AUROC per class:
+  Atelectasis: 0.6151248336292348
+  Cardiomegaly: 0.8149530270842581
+  Consolidation: 0.6679438601863847
+  Pleural Effusion: 0.8085326596490021
+  Pneumonia: 0.6156550276907341
+Val AUROC per class:
+  Atelectasis: 0.6337547166203626
+  Cardiomegaly: 0.8345659835698181
+  Consolidation: 0.6747079502729417
+  Pleural Effusion: 0.8269740439281464
+  Pneumonia: 0.6680193385833865
+
+Epoch 2
+Train Loss: 1.0002
+Val Loss: 0.9919
+Train Mean AUROC: 0.73972640313488
+Val Mean AUROC: 0.74107512132893
+Train AUROC per class:
+  Atelectasis: 0.6396429874191449
+  Cardiomegaly: 0.8433294334357246
+  Consolidation: 0.6989724333907223
+  Pleural Effusion: 0.8363088006715936
+  Pneumonia: 0.6803783607572145
+Val AUROC per class:
+  Atelectasis: 0.6505908760625083
+  Cardiomegaly: 0.8524102700179238
+  Consolidation: 0.6805174268609973
+  Pleural Effusion: 0.8413148643500996
+  Pneumonia: 0.6805421693531214
+
+Epoch 3
+Train Loss: 0.9747
+Val Loss: 0.9793
+Train Mean AUROC: 0.7577859285167212
+Val Mean AUROC: 0.7509180197042324
+Train AUROC per class:
+  Atelectasis: 0.6557408077249491
+  Cardiomegaly: 0.8536907031360139
+  Consolidation: 0.7145318303062057
+  Pleural Effusion: 0.8461787381089845
+  Pneumonia: 0.7187875633074529
+Val AUROC per class:
+  Atelectasis: 0.6567967073663968
+  Cardiomegaly: 0.8571354032395231
+  Consolidation: 0.6955871633034048
+  Pleural Effusion: 0.8472004593604736
+  Pneumonia: 0.6978703652513638
+
+Epoch 4
+Train Loss: 0.9510
+Val Loss: 0.9764
+Train Mean AUROC: 0.7723391793351182
+Val Mean AUROC: 0.7572508539787876
+Train AUROC per class:
+  Atelectasis: 0.6676382630606899
+  Cardiomegaly: 0.8628358188292777
+  Consolidation: 0.7285505003444701
+  Pleural Effusion: 0.8531058283729802
+  Pneumonia: 0.7495654860681729
+Val AUROC per class:
+  Atelectasis: 0.6656277796966904
+  Cardiomegaly: 0.8553041169340648
+  Consolidation: 0.6995479479340528
+  Pleural Effusion: 0.8506352702518944
+  Pneumonia: 0.7151391550772355
+
+Epoch 5
+Train Loss: 0.9228
+Val Loss: 0.9971
+Train Mean AUROC: 0.7880028723242025
+Val Mean AUROC: 0.75537336706246
+Train AUROC per class:
+  Atelectasis: 0.6770744618270979
+  Cardiomegaly: 0.8716738316280803
+  Consolidation: 0.7448289477087935
+  Pleural Effusion: 0.8578845980509373
+  Pneumonia: 0.7885525224061045
+Val AUROC per class:
+  Atelectasis: 0.6657186517346959
+  Cardiomegaly: 0.8546481096849983
+  Consolidation: 0.7068848900650943
+  Pleural Effusion: 0.8514450751407627
+  Pneumonia: 0.6981701086867496

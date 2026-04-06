@@ -1,0 +1,11 @@
+metric,value
+original_rows,191027
+after_cleaning_rows,191027
+train_rows,133186
+val_rows,29244
+test_rows,28597
+removed_missing_files,0
+removed_unreadable_files,0
+flagged_too_small,0
+flagged_blank,0
+flagged_low_contrast,0
