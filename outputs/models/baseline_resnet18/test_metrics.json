@@ -1,0 +1,9 @@
+{
+  "Atelectasis": 0.6396857412426967,
+  "Cardiomegaly": 0.8487192249077599,
+  "Consolidation": 0.7024070678434111,
+  "Pleural Effusion": 0.8460950291868472,
+  "Pneumonia": 0.6747893636182314,
+  "mean_auroc": 0.7423392853597892,
+  "test_loss": 1.0087845587653705
+}

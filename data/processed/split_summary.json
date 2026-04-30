@@ -1,0 +1,35 @@
+{
+  "train": {
+    "rows": 133186,
+    "patients": 45173,
+    "label_prevalence": {
+      "Atelectasis": 0.1548210772904059,
+      "Cardiomegaly": 0.12296337452885438,
+      "Consolidation": 0.06769480275704653,
+      "Pleural Effusion": 0.40209181145165407,
+      "Pneumonia": 0.024619704773775022
+    }
+  },
+  "val": {
+    "rows": 29244,
+    "patients": 9680,
+    "label_prevalence": {
+      "Atelectasis": 0.15804951443031048,
+      "Cardiomegaly": 0.12067432635754342,
+      "Consolidation": 0.06582546847216524,
+      "Pleural Effusion": 0.4010737245246888,
+      "Pneumonia": 0.023389413212966764
+    }
+  },
+  "test": {
+    "rows": 28597,
+    "patients": 9681,
+    "label_prevalence": {
+      "Atelectasis": 0.15658985208238627,
+      "Cardiomegaly": 0.12165611777459175,
+      "Consolidation": 0.07140609154806449,
+      "Pleural Effusion": 0.4062314228765255,
+      "Pneumonia": 0.024897716543693393
+    }
+  }
+}

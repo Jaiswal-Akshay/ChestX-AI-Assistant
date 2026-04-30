@@ -1,0 +1,40 @@
+seed: 42
+data:
+  raw_root: data/raw
+  chexpert_csv: data/raw/CheXpert-v1.0-small/train.csv
+  processed_dir: data/processed
+  frontal_only: true
+labels:
+  target_labels:
+  - Atelectasis
+  - Cardiomegaly
+  - Consolidation
+  - Pleural Effusion
+  - Pneumonia
+  uncertainty_policy: u_zeros
+quality:
+  min_size: 100
+  std_threshold: 5.0
+  contrast_threshold: 15.0
+  remove_low_quality: true
+split:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  patient_level: true
+image:
+  size: 224
+  grayscale: true
+loader:
+  batch_size: 16
+  num_workers: 0
+model:
+  name: resnet18
+  pretrained: true
+training:
+  epochs: 5
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  device: cuda
+  save_dir: outputs/models/baseline_resnet18
+  early_stopping_patience: 3

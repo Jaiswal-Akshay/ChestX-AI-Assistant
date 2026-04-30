@@ -1,20 +1,27 @@
+from __future__ import annotations
+
+from typing import Dict
+
 import numpy as np
 from PIL import Image
 
 
 def is_too_small(img: Image.Image, min_size: int = 100) -> bool:
-    w, h = img.size
-    return w < min_size or h < min_size
+    """Return True if either image dimension is below min_size."""
+    width, height = img.size
+    return width < min_size or height < min_size
 
 
 def is_blank_image(img: Image.Image, std_threshold: float = 5.0) -> bool:
-    arr = np.array(img)
-    return arr.std() < std_threshold
+    """Return True if grayscale pixel standard deviation is too low."""
+    arr = np.asarray(img, dtype=np.float32)
+    return float(arr.std()) < std_threshold
 
 
 def is_low_contrast(img: Image.Image, contrast_threshold: float = 15.0) -> bool:
-    arr = np.array(img)
-    return (arr.max() - arr.min()) < contrast_threshold
+    """Return True if the image intensity range is too narrow."""
+    arr = np.asarray(img, dtype=np.float32)
+    return float(arr.max() - arr.min()) < contrast_threshold
 
 
 def check_image_quality(
@@ -22,9 +29,9 @@ def check_image_quality(
     min_size: int = 100,
     std_threshold: float = 5.0,
     contrast_threshold: float = 15.0,
-) -> dict:
+) -> Dict[str, bool]:
     """
-    Return a dictionary of quality flags for one PIL image.
+    Return a dictionary containing image quality flags.
     """
     return {
         "too_small": is_too_small(img, min_size=min_size),
