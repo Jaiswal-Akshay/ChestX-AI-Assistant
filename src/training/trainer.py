@@ -74,6 +74,7 @@ def train_model(
     label_names: List[str],
     save_dir: str,
     early_stopping_patience: int = 3,
+    scheduler=None,
 ) -> Dict[str, float]:
     save_path = Path(save_dir)
     save_path.mkdir(parents=True, exist_ok=True)
@@ -83,8 +84,6 @@ def train_model(
     best_val_auroc = -1.0
     best_epoch = -1
     patience_counter = 0
-
-    history = []
 
     for epoch in range(1, epochs + 1):
         print(f"\nEpoch {epoch}/{epochs}")
@@ -107,8 +106,14 @@ def train_model(
         )
         val_metrics = multilabel_auroc(val_y, val_p, label_names)
 
+        if scheduler is not None:
+            scheduler.step(val_loss)
+
+        current_lr = optimizer.param_groups[0]["lr"]
+
         row = {
             "epoch": epoch,
+            "learning_rate": current_lr,
             "train_loss": train_loss,
             "val_loss": val_loss,
             "train_mean_auroc": train_metrics["mean_auroc"],
@@ -121,43 +126,38 @@ def train_model(
 
         fieldnames = list(row.keys())
         write_metrics_row(metrics_csv, row, fieldnames)
-        history.append(row)
 
         print(
+            f"lr={current_lr:.6f} | "
             f"train_loss={train_loss:.4f} | "
             f"val_loss={val_loss:.4f} | "
             f"train_mean_auroc={train_metrics['mean_auroc']:.4f} | "
             f"val_mean_auroc={val_metrics['mean_auroc']:.4f}"
         )
 
+        checkpoint_payload = {
+            "epoch": epoch,
+            "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": optimizer.state_dict(),
+            "best_val_auroc": best_val_auroc,
+            "label_names": label_names,
+        }
+
+        if scheduler is not None:
+            checkpoint_payload["scheduler_state_dict"] = scheduler.state_dict()
+
         if val_metrics["mean_auroc"] > best_val_auroc:
             best_val_auroc = val_metrics["mean_auroc"]
             best_epoch = epoch
             patience_counter = 0
 
-            save_checkpoint(
-                {
-                    "epoch": epoch,
-                    "model_state_dict": model.state_dict(),
-                    "optimizer_state_dict": optimizer.state_dict(),
-                    "best_val_auroc": best_val_auroc,
-                    "label_names": label_names,
-                },
-                save_path / "best_model.pt",
-            )
+            checkpoint_payload["best_val_auroc"] = best_val_auroc
+            save_checkpoint(checkpoint_payload, save_path / "best_model.pt")
         else:
             patience_counter += 1
 
-        save_checkpoint(
-            {
-                "epoch": epoch,
-                "model_state_dict": model.state_dict(),
-                "optimizer_state_dict": optimizer.state_dict(),
-                "best_val_auroc": best_val_auroc,
-                "label_names": label_names,
-            },
-            save_path / "last_model.pt",
-        )
+        checkpoint_payload["best_val_auroc"] = best_val_auroc
+        save_checkpoint(checkpoint_payload, save_path / "last_model.pt")
 
         if patience_counter >= early_stopping_patience:
             print(f"Early stopping triggered at epoch {epoch}.")

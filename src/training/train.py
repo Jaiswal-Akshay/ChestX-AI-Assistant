@@ -86,6 +86,13 @@ def main() -> None:
         weight_decay=weight_decay,
     )
 
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer,
+        mode="min",
+        factor=0.5,
+        patience=2,
+    )
+
     train_summary = train_model(
         model=model,
         train_loader=train_loader,
@@ -97,6 +104,7 @@ def main() -> None:
         label_names=target_labels,
         save_dir=save_dir,
         early_stopping_patience=early_stopping_patience,
+        scheduler=scheduler,
     )
 
     best_ckpt_path = Path(save_dir) / "best_model.pt"

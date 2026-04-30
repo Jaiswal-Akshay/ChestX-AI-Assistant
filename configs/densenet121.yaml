@@ -36,7 +36,7 @@ loader:
   num_workers: 0
 
 model:
-  name: resnet18
+  name: densenet121
   pretrained: true
 
 training:
@@ -44,5 +44,5 @@ training:
   learning_rate: 0.0003
   weight_decay: 0.0001
   device: cuda
-  save_dir: outputs/models/baseline_resnet18_uzeros_224
+  save_dir: outputs/models/densenet121_uzeros_224
   early_stopping_patience: 5
