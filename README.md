@@ -42,17 +42,13 @@ python run_pipeline.py \
   --mrn "MRN-00421" \
   --out outputs/reports/report.pdf
 ```
-X-ray Image
-   ↓
-Deep Learning Model (ResNet)
-   ↓
-Disease Probabilities
-   ↓
-LLM (Groq)
-   ↓
-Radiology Report
-   ↓
-PDF Output
+### System Pipeline
+
+> ### How it Works
+> 1. **Capture:** The system takes a chest `X-ray Image`.
+> 2. **Analyze:** A **ResNet** deep learning model calculates `Disease Probabilities`.
+> 3. **Interpret:** The **Groq LLM** converts raw data into a structured `Radiology Report`.
+> 4. **Deliver:** The final result is exported as a formatted `PDF Output`.
 
 ---
 
