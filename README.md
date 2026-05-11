@@ -10,53 +10,17 @@
 
 ---
 
-## 🚀 Features
+## 📥 Dataset Setup (CheXpert)
 
-- 🧠 Deep Learning Model (ResNet18 / DenseNet121)  
-- 📊 Multi-label classification (5 diseases)  
-- 🔥 Grad-CAM explainability (optional)  
-- 📝 LLM-powered report generation (Groq / OpenAI compatible)  
-- 📄 Professional PDF report output  
-- ⚡ One-command pipeline  
+This project uses the **CheXpert v1.0-small dataset**.
 
 ---
 
-## 🧠 Supported Findings
+### 1. Download the Dataset (Kaggle)
 
-- Atelectasis  
-- Cardiomegaly  
-- Consolidation  
-- Pleural Effusion  
-- Pneumonia  
+Download the dataset from: https://www.kaggle.com/datasets/ashery/chexpert
 
----
-
-## 📂 Project Structure
-
-
-ChestX-AI-Assistant/
-├── src/
-│ ├── models/
-│ │ └── predict_sample.py
-│ ├── explainability/
-│ │ └── gradcam.py
-│ ├── reporting/
-│ │ └── new_generate_report_groqcloud.py
-│
-├── data/
-│ └── raw/
-│ └── patient_xray.png
-│
-├── outputs/
-│ └── reports/
-│ ├── report.pdf
-│ ├── gradcam_result.png
-│ └── sample_evidence.json
-│
-├── run_pipeline.py
-├── requirements.txt
-└── README.md
-
+Unzip the downloaded file and place it in: \ChestX-AI-Assistant\data\raw\CheXpert-v1.0-small
 
 ---
 
@@ -92,7 +56,7 @@ PDF Output
 
 ---
 
-## 📄 Example Output
+##  Example Output
 
 ### Findings
 
@@ -106,13 +70,13 @@ PDF Output
 
 ## 📊 Outputs Generated
 
-- 📄 `report.pdf` → Final radiology report  
-- 🔥 `gradcam_result.png` → Model attention visualization  
-- 📁 `sample_evidence.json` → Model prediction output  
+-  `report.pdf` → Final radiology report  
+-  `gradcam_result.png` → Model attention visualization  
+-  `sample_evidence.json` → Model prediction output  
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 > This project is for **research and educational purposes only**.  
 > It does NOT provide medical advice or diagnosis.  
