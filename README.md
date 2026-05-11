@@ -64,11 +64,11 @@ python run_pipeline.py \
 
 ---
 
-## 📊 Outputs Generated
+### 📊 Outputs Generated
 
--  `report.pdf` → Final radiology report  
--  `gradcam_result.png` → Model attention visualization  
--  `sample_evidence.json` → Model prediction output  
+* [📄 **report.pdf**](./outputs/reports/report.pdf) → Final radiology report
+* [🖼️ **gradcam_result.png**](./outputs/reports/gradcam_result.png) → Model attention visualization
+* [📁 **sample_evidence.json**](./outputs/reports/sample_evidence.json) → Model prediction output
 
 ---
 
